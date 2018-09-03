@@ -1,6 +1,7 @@
 ﻿using System;
 using MeetingTrackManagement.Core;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Razor.TagHelpers;
 using Newtonsoft.Json.Linq;
 
 namespace MeetingTrackManagement.Web.Angular.Controllers
@@ -18,16 +19,34 @@ namespace MeetingTrackManagement.Web.Angular.Controllers
 
         // POST: api/Meeting
         [HttpPost]
-        public string Post([FromBody] JObject data)
+        public Result Post([FromBody] JObject data)
         {
             var input = data.GetValue("input").ToString();
             var tracks = Convert.ToInt32(data.GetValue("tracks").ToString());
+            if (string.IsNullOrEmpty(input) || tracks < 1)
+            {
+                var r = new Result()
+                {
+                    Output = "No data was passed"
+                };
+                return r;
+            }
+            
             _meeting.InitializeTracks(tracks);
             var inputList = _meeting.Read(input);
             _meeting.RegisterTalks(inputList);
             _meeting.Schedule();
-            string result = _meeting.GetSchedule();
+            string output = _meeting.GetSchedule();
+            var result = new Result()
+            {
+                Output = output
+            };
             return result;
+        }
+
+        public class Result
+        {
+           public string Output { get; set; }
         }
 
     }

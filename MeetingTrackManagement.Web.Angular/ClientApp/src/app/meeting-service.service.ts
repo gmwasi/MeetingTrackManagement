@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
+import { Result } from './home/home.component';
 
 @Injectable()
 export class MeetingService {
@@ -11,8 +12,8 @@ export class MeetingService {
       this._http = http;
   }
 
-  public Post(entity: MeetingModel): Observable<string> {
-      return this._http.post<string>(`${this._url}`, entity, { responseType: 'text'});
+  public Post(entity: MeetingModel): Observable<Result> {
+      return this._http.post<Result>(`${this._url}`, entity);
   }
 
   private handleError(err: HttpErrorResponse) {
