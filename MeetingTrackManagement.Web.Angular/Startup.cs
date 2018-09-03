@@ -1,3 +1,4 @@
+using MeetingTrackManagement.Core;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -27,6 +28,11 @@ namespace MeetingTrackManagement.Web.Angular
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+            services.AddScoped<IScheduler, MeetingScheduler>();
+            services.AddScoped<IMeeting, Meeting>();
+            services.AddScoped<ITalksProcessor, TalksProcessor>();
+            services.AddScoped<IMeetingResult, MeetingResult>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

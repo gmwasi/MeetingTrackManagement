@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeetingTrackManagement.Web.Angular", "MeetingTrackManagement.Web.Angular\MeetingTrackManagement.Web.Angular.csproj", "{5A950FEF-9D79-4F88-802B-782B681135E9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeetingTrackManagement.Core", "MeetingTrackManagement.Core\MeetingTrackManagement.Core.csproj", "{79BDE586-2D93-492D-8BB9-BFB2AE801C67}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{5A950FEF-9D79-4F88-802B-782B681135E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A950FEF-9D79-4F88-802B-782B681135E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A950FEF-9D79-4F88-802B-782B681135E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79BDE586-2D93-492D-8BB9-BFB2AE801C67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79BDE586-2D93-492D-8BB9-BFB2AE801C67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79BDE586-2D93-492D-8BB9-BFB2AE801C67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79BDE586-2D93-492D-8BB9-BFB2AE801C67}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
